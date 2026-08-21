@@ -4,5 +4,8 @@
     "@types/node": "^26.1.2",
     "typescript": "^7.0.2"
   },
-  "scripts": {}
+  "scripts": {},
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
 }
