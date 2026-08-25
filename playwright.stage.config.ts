@@ -42,7 +42,13 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: "setup",
+      testMatch: "/setup/.setup.ts",
+    },
+    {
       name: "e2e",
+      testIgnore: "/setup/.setup.ts",
+      dependencies: ["setup"],
     },
 
     // {

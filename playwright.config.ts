@@ -33,6 +33,7 @@ export default defineConfig({
       username: process.env.HTTP_USERNAME,
       password: process.env.HTTP_PASSWORD,
     },
+
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on",
     video: "on",
@@ -42,7 +43,24 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: "setup",
+      testMatch: /.*\.setup\.ts/,
+    },
+
+    {
       name: "e2e",
+      testIgnore: /.*\.setup\.ts/,
+      dependencies: ["setup"],
+      use: {
+        storageState: ".auth/User1State.json",
+      },
+    },
+    {
+      name: "registration",
+      testMatch: /.*registration.*\.spec\.ts/,
+      use: {
+        storageState: undefined,
+      },
     },
 
     // {
