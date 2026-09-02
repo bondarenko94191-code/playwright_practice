@@ -56,6 +56,19 @@ export default defineConfig({
       },
     },
     {
+      name: "api",
+      testMatch: "*/api/*.spec.ts",
+      dependencies: ["setup"],
+    },
+    {
+      name: "api_mock_data",
+      use: {
+        storageState: ".auth/User1State.json",
+      },
+      testMatch: "*/api/*.spec.ts",
+      dependencies: ["setup"],
+    },
+    {
       name: "registration",
       testMatch: /.*registration.*\.spec\.ts/,
       use: {
