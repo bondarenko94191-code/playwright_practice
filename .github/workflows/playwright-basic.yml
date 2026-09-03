@@ -12,6 +12,8 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.62.0-noble
     env:
       BASE_URL: ${{ secrets.BASE_URL }}
       HTTP_USERNAME: ${{ secrets.HTTP_USERNAME }}

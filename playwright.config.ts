@@ -71,7 +71,6 @@ export default defineConfig({
       use: {
         storageState: ".auth/User1State.json",
       },
-      testMatch: "*/api/*.spec.ts",
       dependencies: ["setup"],
     },
     {
