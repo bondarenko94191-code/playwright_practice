@@ -8,4 +8,5 @@ node_modules/
 /playwright/.auth/
 .DS_Store
 .env
-.authplaywright-report.zip
+.auth
+playwright-report.zip
