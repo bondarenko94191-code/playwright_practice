@@ -1,10 +1,10 @@
-name: Playwright Tests
+name: Playwright Tests Basic
 on:
   push:
     branches: [main, master]
   pull_request:
     branches: [main, master]
-    workflow_dispatch:
+  workflow_dispatch:
     inputs:
       test_settings:
         description: "Test Settings to run"
@@ -43,7 +43,7 @@ jobs:
     permissions:
       pages: write
       id-token: write
-  steps:
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v6
       - name: Download Playwright report artifact
