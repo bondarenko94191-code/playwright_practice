@@ -1,7 +1,9 @@
 {
   "devDependencies": {
     "@playwright/test": "^1.62.1",
+    "@types/archiver": "^8.0.0",
     "@types/node": "^26.1.2",
+    "archiver": "^8.0.0",
     "typescript": "^7.0.2"
   },
   "scripts": {},

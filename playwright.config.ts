@@ -49,7 +49,11 @@ export default defineConfig({
 
     {
       name: "e2e",
-      testIgnore: /.*\.setup\.ts/,
+      testIgnore: [
+        /.*\.setup\.ts/,
+        /registration(\.pom)?\.spec\.ts/,
+        /.*\.api\.spec\.ts/,
+      ],
       dependencies: ["setup"],
       use: {
         storageState: ".auth/User1State.json",
@@ -58,10 +62,12 @@ export default defineConfig({
     {
       name: "api",
       testMatch: "*/api/*.spec.ts",
+      testIgnore: /.*profile\.api\.spec\.ts/,
       dependencies: ["setup"],
     },
     {
       name: "api_mock_data",
+      testMatch: /.*profile\.api\.spec\.ts/,
       use: {
         storageState: ".auth/User1State.json",
       },
@@ -70,16 +76,16 @@ export default defineConfig({
     },
     {
       name: "registration",
-      testMatch: /.*registration.*\.spec\.ts/,
+      testMatch: /.*registration(\.pom)?\.spec\.ts/,
       use: {
         storageState: undefined,
       },
     },
 
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
+    {
+      name: "firefox",
+      use: { ...devices["Desktop Firefox"] },
+    },
 
     // {
     //   name: 'webkit',
