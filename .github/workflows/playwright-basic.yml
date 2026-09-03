@@ -5,6 +5,10 @@ on:
   pull_request:
     branches: [main, master]
     workflow_dispatch:
+    inputs:
+      test_settings:
+        description: "Test Settings to run"
+        required: false
 jobs:
   test:
     timeout-minutes: 60
@@ -37,8 +41,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     permissions:
-    pages: write
-    id-token: write
+      pages: write
+      id-token: write
   steps:
     - name: Checkout repository
       uses: actions/checkout@v6
