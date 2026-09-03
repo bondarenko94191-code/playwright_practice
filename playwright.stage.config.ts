@@ -41,14 +41,14 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    // {
-    //   name: "setup",
-    //   testMatch: /.*\.setup\.ts/,
-    // },
-    // {
-    //   name: "e2e",
-    //   testIgnore: [/.*\.setup\.ts/, /.*registration.*\.spec\.ts/],
-    // },
+    {
+      name: "setup",
+      testMatch: /.*\.setup\.ts/,
+    },
+    {
+      name: "e2e",
+      testIgnore: [/.*\.setup\.ts/, /.*registration.*\.spec\.ts/],
+    },
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },
