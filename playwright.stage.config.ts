@@ -46,6 +46,10 @@ export default defineConfig({
       testMatch: /.*\.setup\.ts/,
     },
     {
+      name: "setup",
+      testMatch: /.*\.setup\.ts/,
+    },
+    {
       name: "e2e",
       testIgnore: [/.*\.setup\.ts/, /.*registration.*\.spec\.ts/],
     },

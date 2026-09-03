@@ -48,6 +48,11 @@ export default defineConfig({
     },
 
     {
+      name: "setup",
+      testMatch: /.*\.setup\.ts/,
+    },
+
+    {
       name: "e2e",
       testIgnore: [
         /.*\.setup\.ts/,
@@ -82,10 +87,10 @@ export default defineConfig({
       },
     },
 
-    {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
-    },
+    // {
+    //   name: "firefox",
+    //   use: { ...devices["Desktop Firefox"] },
+    // },
 
     // {
     //   name: 'webkit',
